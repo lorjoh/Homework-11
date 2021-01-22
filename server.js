@@ -11,8 +11,8 @@ var port = process.env.PORT || 8000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static('public'));
-app.use(express.static(__dirname, 'public'));
+app.use(express.static('public'));
+// app.use(express.static(__dirname, 'public'));
 
 // html routes
 app.get('*', function (req, res) {
@@ -67,7 +67,7 @@ app.delete('/api/notes/:id', function (req, res) {
         if (dbJson[i].id == req.params.id) {
             dbJson.splice(i, 1);
             break;
-        }
+        }c
     }
     //  return JSON.stringify(dbJson)
     // }
